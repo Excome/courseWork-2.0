@@ -7,3 +7,13 @@ C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseW
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.pdb
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.MainForm.resources
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.exe.config
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.exe
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.pdb
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csprojAssemblyReference.cache
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.MainForm.resources
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.Properties.Resources.resources
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.GenerateResource.cache
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.pdb
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalsForm.resources

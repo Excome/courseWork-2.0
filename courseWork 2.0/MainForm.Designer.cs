@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PeriodicalsButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,17 +48,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Типография";
             // 
-            // button1
+            // PeriodicalsButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Moccasin;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(27, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 58);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Периодические издания";
-            this.button1.UseVisualStyleBackColor = false;
+            this.PeriodicalsButton.BackColor = System.Drawing.Color.Moccasin;
+            this.PeriodicalsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PeriodicalsButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PeriodicalsButton.Location = new System.Drawing.Point(27, 257);
+            this.PeriodicalsButton.Name = "PeriodicalsButton";
+            this.PeriodicalsButton.Size = new System.Drawing.Size(197, 32);
+            this.PeriodicalsButton.TabIndex = 1;
+            this.PeriodicalsButton.Text = "Периодические издания";
+            this.PeriodicalsButton.UseVisualStyleBackColor = false;
+            this.PeriodicalsButton.Click += new System.EventHandler(this.PeriodicalsButton_Click);
             // 
             // button2
             // 
@@ -119,19 +121,33 @@
             this.button6.Text = "Отчеты";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Moccasin;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(27, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 24);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Список номеров";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(659, 393);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PeriodicalsButton);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainForm";
             this.Text = "Типография";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -143,12 +159,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PeriodicalsButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
     }
 }
 
