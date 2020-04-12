@@ -52,7 +52,6 @@ namespace courseWork_2._0
             {
                 dataGridView1.Rows.Add(dataElement);
             }
-           
         }
 
         private void LoadDataComboBox(ComboBox cb)
@@ -61,7 +60,6 @@ namespace courseWork_2._0
             {
                 sqlConnection.Open();
             }
-            SqlCommand command = new SqlCommand("SELECT [name] FROM Periodicals ORDER BY [id]", sqlConnection);
             SqlDataAdapter sqlAdapter = new SqlDataAdapter("SELECT * FROM Periodicals ORDER BY[id]", sqlConnection);
             DataSet comboboxDataSet = new DataSet();
             sqlAdapter.Fill(comboboxDataSet);
@@ -92,6 +90,10 @@ namespace courseWork_2._0
             if(tabControl1.SelectedIndex == 2)
             {
                 LoadDataComboBox(comboBox1);
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                LoadDataComboBox(comboBox2);
             }
         }
 
@@ -166,6 +168,63 @@ namespace courseWork_2._0
             char ch = e.KeyChar;
             if (!Char.IsDigit(ch) && ch != 8)
                 e.Handled = true;
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed) 
+                { 
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("UPDATE [Periodicals] SET [name]=@name, [number_of_year]=@number_of_year" +
+                    " WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", comboBox1.SelectedValue);
+                command.Parameters.AddWithValue("name", nameUpdateTB.Text);
+                command.Parameters.AddWithValue("number_of_year", Convert.ToInt32(numberOfYearUpdateTB.Text));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Изменения успешно внесены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadDataComboBox(comboBox1);
+                if (sqlConnection.State == ConnectionState.Open) 
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed) 
+                { 
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("DELETE FROM [Periodicals] WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", comboBox2.SelectedValue);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись успешно удалена!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadDataComboBox(comboBox2);
+                if (sqlConnection.State == ConnectionState.Open) 
+                { 
+                    sqlConnection.Close(); 
+                }
+            }
         }
     }
 }

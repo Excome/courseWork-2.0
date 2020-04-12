@@ -58,5 +58,11 @@ namespace courseWork_2._0
             PeriodicalsForm PeriodicalsForm = new PeriodicalsForm(this);
             PeriodicalsForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PeriodicalNumbersForm PeriodicalNumbersForm = new PeriodicalNumbersForm(this);
+            PeriodicalNumbersForm.ShowDialog();
+        }
     }
 }

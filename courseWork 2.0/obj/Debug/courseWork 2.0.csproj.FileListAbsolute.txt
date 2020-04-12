@@ -17,3 +17,4 @@ C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWo
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.pdb
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalsForm.resources
+C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalNumbersForm.resources
