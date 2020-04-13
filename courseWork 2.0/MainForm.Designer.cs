@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.PeriodicalsButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.booksButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.numbersButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,17 +61,18 @@
             this.PeriodicalsButton.UseVisualStyleBackColor = false;
             this.PeriodicalsButton.Click += new System.EventHandler(this.PeriodicalsButton_Click);
             // 
-            // button2
+            // booksButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Moccasin;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(230, 257);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 58);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Книги";
-            this.button2.UseVisualStyleBackColor = false;
+            this.booksButton.BackColor = System.Drawing.Color.Moccasin;
+            this.booksButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.booksButton.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.booksButton.Location = new System.Drawing.Point(230, 257);
+            this.booksButton.Name = "booksButton";
+            this.booksButton.Size = new System.Drawing.Size(197, 58);
+            this.booksButton.TabIndex = 2;
+            this.booksButton.Text = "Книги";
+            this.booksButton.UseVisualStyleBackColor = false;
+            this.booksButton.Click += new System.EventHandler(this.booksButton_Click);
             // 
             // button3
             // 
@@ -121,18 +122,18 @@
             this.button6.Text = "Отчеты";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // numbersButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Moccasin;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(27, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 24);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Список номеров";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.numbersButton.BackColor = System.Drawing.Color.Moccasin;
+            this.numbersButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.numbersButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numbersButton.Location = new System.Drawing.Point(27, 291);
+            this.numbersButton.Name = "numbersButton";
+            this.numbersButton.Size = new System.Drawing.Size(197, 24);
+            this.numbersButton.TabIndex = 7;
+            this.numbersButton.Text = "Список номеров";
+            this.numbersButton.UseVisualStyleBackColor = false;
+            this.numbersButton.Click += new System.EventHandler(this.numbersButton_Click);
             // 
             // MainForm
             // 
@@ -140,12 +141,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(659, 393);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.numbersButton);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.booksButton);
             this.Controls.Add(this.PeriodicalsButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -161,12 +162,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button PeriodicalsButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button booksButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button numbersButton;
     }
 }
 
