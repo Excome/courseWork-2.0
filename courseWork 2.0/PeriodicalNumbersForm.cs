@@ -45,6 +45,27 @@ namespace courseWork_2._0
                 sqlConnection.Close();
             }
         }
+
+        private void LoadNumbersComboBox(ComboBox cb1, ComboBox cb2)
+        {
+            if (sqlConnection.State == ConnectionState.Closed)
+            {
+                sqlConnection.Open();
+            }
+            SqlCommand command = new SqlCommand("SELECT * FROM Periodical_Numbers WHERE [id_periodical]=@id_periodical", sqlConnection);
+            command.Parameters.AddWithValue("id_periodical", cb1.SelectedValue);
+            SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
+            DataSet comboboxDataSet = new DataSet();
+            sqlAdapter.Fill(comboboxDataSet);
+            DataTable comboboxDataTable = comboboxDataSet.Tables[0];
+            cb2.DataSource = comboboxDataTable;
+            cb2.DisplayMember = "number";
+            cb2.ValueMember = "id";
+            if (sqlConnection.State == ConnectionState.Open)
+            {
+                sqlConnection.Close();
+            }
+        }
         private void LoadDataTable()
         {
             if (sqlConnection.State == ConnectionState.Closed)
@@ -82,7 +103,6 @@ namespace courseWork_2._0
         {
             dataGridView1.Rows.Clear();
             LoadDataTable();
-            MessageBox.Show(Convert.ToString(comboBox3.Text));
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +116,14 @@ namespace courseWork_2._0
             {
                 dataGridView1.Rows.Clear();
                 LoadDataComboBox(addCombobox);
+            }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                LoadDataComboBox(updateCombobox1);
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                LoadDataComboBox(deleteComboBox1);
             }
         }
 
@@ -165,6 +193,130 @@ namespace courseWork_2._0
             }
             finally
             {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void updateCombobox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LoadNumbersComboBox(updateCombobox1, updateCombobox2);
+        }
+
+        private void updateCombobox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("SELECT * FROM [Periodical_Numbers] WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", updateCombobox2.SelectedValue);
+                SqlDataReader sqlReader = command.ExecuteReader();
+                sqlReader.Read();
+                countUpdateTB.Text = Convert.ToString(sqlReader["count"]);
+                priceUpdateTB.Text = Convert.ToString(sqlReader["unit_price"]);
+                costUpdateTB.Text = Convert.ToString(sqlReader["unit_cost"]);
+                advertUpdateTB.Text = Convert.ToString(sqlReader["advertising_cm"]);
+                sqlReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open) { sqlConnection.Close(); }
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("UPDATE [Periodical_Numbers] SET [count]=@count, [unit_price]=@unit_price," +
+                    "[unit_cost]=@unit_cost, [advertising_cm]=@advertising_cm WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", updateCombobox2.SelectedValue);
+                command.Parameters.AddWithValue("count", countUpdateTB.Text);
+                command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceUpdateTB.Text));
+                command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costUpdateTB.Text));
+                command.Parameters.AddWithValue("advertising_cm", Convert.ToInt32(advertUpdateTB.Text));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Изменения успешно внесены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void countUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+
+        private void priceUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+
+        private void costUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+
+        private void advertUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+
+        private void deleteComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LoadNumbersComboBox(deleteComboBox1, deleteComboBox2);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("DELETE FROM [Periodical_Numbers] WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", deleteComboBox2.SelectedValue);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись успешно удалена!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadNumbersComboBox(deleteComboBox1, deleteComboBox2);
                 if (sqlConnection.State == ConnectionState.Open)
                 {
                     sqlConnection.Close();
