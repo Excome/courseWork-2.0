@@ -78,7 +78,7 @@ namespace courseWork_2._0
             List<string[]> data = new List<string[]>();
             while (dataReader.Read())
             {
-                data.Add(new string[8]);
+                data.Add(new string[9]);
                 data[data.Count - 1][0] = dataReader[0].ToString();
                 data[data.Count - 1][1] = dataReader[1].ToString();
                 data[data.Count - 1][2] = dataReader[2].ToString();
@@ -87,6 +87,7 @@ namespace courseWork_2._0
                 data[data.Count - 1][5] = dataReader[5].ToString();
                 data[data.Count - 1][6] = dataReader[6].ToString();
                 data[data.Count - 1][7] = dataReader[7].ToString();
+                data[data.Count - 1][8] = dataReader[8].ToString();
             }
             dataReader.Close();
             if (sqlConnection.State == ConnectionState.Open)
@@ -157,6 +158,12 @@ namespace courseWork_2._0
             if (!Char.IsDigit(ch) && ch != 8)
                 e.Handled = true;
         }
+        private void saleAddTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -173,8 +180,8 @@ namespace courseWork_2._0
                     !string.IsNullOrEmpty(advertAddTB.Text) && !string.IsNullOrWhiteSpace(advertAddTB.Text))
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO [Periodical_Numbers] (name_periodical, id_periodical, number, count, unit_price," +
-                        "unit_cost, advertising_cm)VALUES(@name_periodical, @id_periodical, @number, @count, @unit_price, @unit_cost," +
-                        " @advertising_cm)", sqlConnection);
+                        "unit_cost, advertising_cm, total_sale)VALUES(@name_periodical, @id_periodical, @number, @count, @unit_price, @unit_cost," +
+                        " @advertising_cm, @total_sale)", sqlConnection);
                     command.Parameters.AddWithValue("name_periodical", addCombobox.Text);
                     command.Parameters.AddWithValue("id_periodical", addCombobox.SelectedValue);
                     command.Parameters.AddWithValue("number", Convert.ToInt32(numberAddTB.Text));
@@ -182,6 +189,7 @@ namespace courseWork_2._0
                     command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceAddTB.Text));
                     command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costAddTB.Text));
                     command.Parameters.AddWithValue("advertising_cm", Convert.ToInt32(advertAddTB.Text));
+                    command.Parameters.AddWithValue("total_sale", Convert.ToInt32(saleAddTB.Text));
                     command.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно добавлена!");
                 }
@@ -221,6 +229,7 @@ namespace courseWork_2._0
                 priceUpdateTB.Text = Convert.ToString(sqlReader["unit_price"]);
                 costUpdateTB.Text = Convert.ToString(sqlReader["unit_cost"]);
                 advertUpdateTB.Text = Convert.ToString(sqlReader["advertising_cm"]);
+                saleUpdateTB.Text = Convert.ToString(sqlReader["total_sale"]);
                 sqlReader.Close();
             }
             catch (Exception ex)
@@ -242,12 +251,13 @@ namespace courseWork_2._0
                     sqlConnection.Open();
                 }
                 SqlCommand command = new SqlCommand("UPDATE [Periodical_Numbers] SET [count]=@count, [unit_price]=@unit_price," +
-                    "[unit_cost]=@unit_cost, [advertising_cm]=@advertising_cm WHERE [id]=@id", sqlConnection);
+                    "[unit_cost]=@unit_cost, [advertising_cm]=@advertising_cm, [total_sale]=@total_sale WHERE [id]=@id", sqlConnection);
                 command.Parameters.AddWithValue("id", updateCombobox2.SelectedValue);
                 command.Parameters.AddWithValue("count", countUpdateTB.Text);
                 command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceUpdateTB.Text));
                 command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costUpdateTB.Text));
                 command.Parameters.AddWithValue("advertising_cm", Convert.ToInt32(advertUpdateTB.Text));
+                command.Parameters.AddWithValue("total_sale", Convert.ToInt32(saleUpdateTB.Text));
                 command.ExecuteNonQuery();
                 MessageBox.Show("Изменения успешно внесены!");
             }
@@ -286,6 +296,12 @@ namespace courseWork_2._0
         }
 
         private void advertUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+        private void saleUpdateTB_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
             if (!Char.IsDigit(ch) && ch != 8)

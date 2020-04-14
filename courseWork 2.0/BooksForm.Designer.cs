@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(147, 4);
+            this.label1.Location = new System.Drawing.Point(245, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 45);
             this.label1.TabIndex = 3;
@@ -83,10 +83,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 52);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(562, 380);
+            this.tabControl1.Size = new System.Drawing.Size(759, 380);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -95,7 +96,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(554, 354);
+            this.tabPage1.Size = new System.Drawing.Size(751, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список изданий";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(548, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 348);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
@@ -133,7 +134,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(554, 354);
+            this.tabPage2.Size = new System.Drawing.Size(751, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -196,7 +197,7 @@
             this.tabPage3.Controls.Add(this.nameUpdateTB);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(554, 354);
+            this.tabPage3.Size = new System.Drawing.Size(751, 354);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Изменить";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -265,7 +266,7 @@
             this.tabPage4.Controls.Add(this.deleteButton);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(554, 354);
+            this.tabPage4.Size = new System.Drawing.Size(751, 354);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Удалить";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -306,7 +307,7 @@
             this.name.HeaderText = "Название";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 350;
+            this.name.Width = 150;
             // 
             // author
             // 
@@ -343,9 +344,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 436);
+            this.ClientSize = new System.Drawing.Size(759, 436);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "BooksForm";
             this.Text = "Список книг";
             this.Load += new System.EventHandler(this.BooksForm_Load);
@@ -368,13 +370,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit_cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_sale;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.TextBox numberOfYearAddTB;
@@ -391,5 +386,12 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_sale;
     }
 }
