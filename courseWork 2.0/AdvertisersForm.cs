@@ -96,7 +96,7 @@ namespace courseWork_2._0
                 }
                 if (!string.IsNullOrEmpty(nameAddTB.Text) && !string.IsNullOrWhiteSpace(nameAddTB.Text))
                 {
-                    SqlCommand command = new SqlCommand("INSERT INTO [Books] (name) VALUES (@name)", sqlConnection);
+                    SqlCommand command = new SqlCommand("INSERT INTO [Advertisers] (name) VALUES (@name)", sqlConnection);
                     command.Parameters.AddWithValue("name", nameAddTB.Text);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно добавлена!");
