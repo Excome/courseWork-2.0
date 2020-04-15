@@ -32,7 +32,7 @@ namespace courseWork_2._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-ATRUUNO\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True";
+            string connectionString = @"Data Source=PROFF-PC\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True";
             sqlConnection = new SqlConnection(connectionString);
             try
             {
@@ -69,6 +69,12 @@ namespace courseWork_2._0
         {
             BooksForm BooksForm = new BooksForm(this);
             BooksForm.ShowDialog();
+        }
+
+        private void advertisersButton_Click(object sender, EventArgs e)
+        {
+            AdvertisersForm AdvertisersForm = new AdvertisersForm(this);
+            AdvertisersForm.ShowDialog();
         }
     }
 }
