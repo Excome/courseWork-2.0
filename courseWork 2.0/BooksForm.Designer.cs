@@ -70,9 +70,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.nameUpdateTB = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.deleteComboBox = new System.Windows.Forms.ComboBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -376,9 +376,9 @@
             this.updateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.updateComboBox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updateComboBox.FormattingEnabled = true;
-            this.updateComboBox.Location = new System.Drawing.Point(325, 14);
+            this.updateComboBox.Location = new System.Drawing.Point(261, 14);
             this.updateComboBox.Name = "updateComboBox";
-            this.updateComboBox.Size = new System.Drawing.Size(269, 31);
+            this.updateComboBox.Size = new System.Drawing.Size(333, 31);
             this.updateComboBox.TabIndex = 29;
             this.updateComboBox.SelectionChangeCommitted += new System.EventHandler(this.updateComboBox_SelectionChangeCommitted);
             // 
@@ -474,9 +474,9 @@
             // authorUpdateTB
             // 
             this.authorUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorUpdateTB.Location = new System.Drawing.Point(325, 88);
+            this.authorUpdateTB.Location = new System.Drawing.Point(261, 88);
             this.authorUpdateTB.Name = "authorUpdateTB";
-            this.authorUpdateTB.Size = new System.Drawing.Size(269, 30);
+            this.authorUpdateTB.Size = new System.Drawing.Size(333, 30);
             this.authorUpdateTB.TabIndex = 19;
             // 
             // label12
@@ -502,9 +502,9 @@
             // nameUpdateTB
             // 
             this.nameUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameUpdateTB.Location = new System.Drawing.Point(325, 51);
+            this.nameUpdateTB.Location = new System.Drawing.Point(261, 51);
             this.nameUpdateTB.Name = "nameUpdateTB";
-            this.nameUpdateTB.Size = new System.Drawing.Size(269, 30);
+            this.nameUpdateTB.Size = new System.Drawing.Size(333, 30);
             this.nameUpdateTB.TabIndex = 16;
             // 
             // tabPage4
@@ -518,19 +518,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Удалить";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteButton.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteButton.Location = new System.Drawing.Point(249, 67);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(197, 44);
-            this.deleteButton.TabIndex = 14;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // label15
             // 
@@ -551,6 +538,19 @@
             this.deleteComboBox.Name = "deleteComboBox";
             this.deleteComboBox.Size = new System.Drawing.Size(324, 31);
             this.deleteComboBox.TabIndex = 31;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.LightBlue;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteButton.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(249, 67);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(197, 44);
+            this.deleteButton.TabIndex = 14;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // BooksForm
             // 

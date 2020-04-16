@@ -32,21 +32,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.addButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.nameAddTB = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nameUpdateTB = new System.Windows.Forms.TextBox();
             this.updateComboBox = new System.Windows.Forms.ComboBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.deleteComboBox = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -112,6 +112,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(373, 348);
             this.dataGridView1.TabIndex = 0;
             // 
+            // id
+            // 
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 50;
+            // 
+            // name
+            // 
+            this.name.Frozen = true;
+            this.name.HeaderText = "Рекламодатель";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 280;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.addButton);
@@ -159,7 +175,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.nameUpdateTB);
             this.tabPage3.Controls.Add(this.updateComboBox);
             this.tabPage3.Controls.Add(this.updateButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -168,6 +184,24 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Изменить";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(11, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 23);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Рекламодатель:";
+            // 
+            // nameUpdateTB
+            // 
+            this.nameUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameUpdateTB.Location = new System.Drawing.Point(176, 53);
+            this.nameUpdateTB.Name = "nameUpdateTB";
+            this.nameUpdateTB.Size = new System.Drawing.Size(195, 30);
+            this.nameUpdateTB.TabIndex = 30;
             // 
             // updateComboBox
             // 
@@ -178,6 +212,7 @@
             this.updateComboBox.Name = "updateComboBox";
             this.updateComboBox.Size = new System.Drawing.Size(356, 31);
             this.updateComboBox.TabIndex = 29;
+            this.updateComboBox.SelectionChangeCommitted += new System.EventHandler(this.updateComboBox_SelectionChangeCommitted);
             // 
             // updateButton
             // 
@@ -190,6 +225,7 @@
             this.updateButton.TabIndex = 20;
             this.updateButton.Text = "Изменить";
             this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // tabPage4
             // 
@@ -234,40 +270,7 @@
             this.deleteButton.TabIndex = 14;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = false;
-            // 
-            // id
-            // 
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 50;
-            // 
-            // name
-            // 
-            this.name.Frozen = true;
-            this.name.HeaderText = "Рекламодатель";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 280;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 23);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Рекламодатель:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(176, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 30);
-            this.textBox1.TabIndex = 30;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // AdvertisersForm
             // 
@@ -315,6 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameUpdateTB;
     }
 }

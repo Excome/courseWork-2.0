@@ -84,6 +84,15 @@ namespace courseWork_2._0
             {
                 nameAddTB.Text = "";
             }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                LoadDataComboBox(updateComboBox);
+                nameUpdateTB.Text = "";
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                LoadDataComboBox(deleteComboBox);
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -109,6 +118,90 @@ namespace courseWork_2._0
             }
             finally
             {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void updateComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("SELECT * FROM [Advertisers] WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", updateComboBox.SelectedValue);
+                SqlDataReader sqlReader = command.ExecuteReader();
+                sqlReader.Read();
+                nameUpdateTB.Text = Convert.ToString(sqlReader["name"]);
+                sqlReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("UPDATE [Advertisers] SET [name]=@name WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", updateComboBox.SelectedValue);
+                command.Parameters.AddWithValue("name", nameUpdateTB.Text);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Изменения успешно внесены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadDataComboBox(updateComboBox);
+                nameUpdateTB.Text = "";
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("DELETE FROM [Advertisers] WHERE [id]=@id", sqlConnection);
+                command.Parameters.AddWithValue("id", deleteComboBox.SelectedValue);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись успешно удалена!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadDataComboBox(deleteComboBox);
                 if (sqlConnection.State == ConnectionState.Open)
                 {
                     sqlConnection.Close();
