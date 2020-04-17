@@ -61,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(28, 9);
+            this.label1.Location = new System.Drawing.Point(33, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 45);
             this.label1.TabIndex = 5;
@@ -79,7 +79,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 70);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(387, 380);
+            this.tabControl1.Size = new System.Drawing.Size(397, 380);
             this.tabControl1.TabIndex = 6;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -89,7 +89,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(379, 354);
+            this.tabPage1.Size = new System.Drawing.Size(389, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список изданий";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(373, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(383, 348);
             this.dataGridView1.TabIndex = 0;
             // 
             // id
@@ -136,7 +136,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(379, 354);
+            this.tabPage2.Size = new System.Drawing.Size(389, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.addButton.BackColor = System.Drawing.Color.LightBlue;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addButton.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(83, 67);
+            this.addButton.Location = new System.Drawing.Point(90, 66);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(197, 44);
             this.addButton.TabIndex = 7;
@@ -167,7 +167,7 @@
             // nameAddTB
             // 
             this.nameAddTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameAddTB.Location = new System.Drawing.Point(174, 19);
+            this.nameAddTB.Location = new System.Drawing.Point(182, 19);
             this.nameAddTB.Name = "nameAddTB";
             this.nameAddTB.Size = new System.Drawing.Size(195, 30);
             this.nameAddTB.TabIndex = 0;
@@ -180,7 +180,7 @@
             this.tabPage3.Controls.Add(this.updateButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(379, 354);
+            this.tabPage3.Size = new System.Drawing.Size(389, 354);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Изменить";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             // nameUpdateTB
             // 
             this.nameUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameUpdateTB.Location = new System.Drawing.Point(176, 53);
+            this.nameUpdateTB.Location = new System.Drawing.Point(184, 53);
             this.nameUpdateTB.Name = "nameUpdateTB";
             this.nameUpdateTB.Size = new System.Drawing.Size(195, 30);
             this.nameUpdateTB.TabIndex = 30;
@@ -210,7 +210,7 @@
             this.updateComboBox.FormattingEnabled = true;
             this.updateComboBox.Location = new System.Drawing.Point(15, 16);
             this.updateComboBox.Name = "updateComboBox";
-            this.updateComboBox.Size = new System.Drawing.Size(356, 31);
+            this.updateComboBox.Size = new System.Drawing.Size(364, 31);
             this.updateComboBox.TabIndex = 29;
             this.updateComboBox.SelectionChangeCommitted += new System.EventHandler(this.updateComboBox_SelectionChangeCommitted);
             // 
@@ -234,7 +234,7 @@
             this.tabPage4.Controls.Add(this.deleteButton);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(379, 354);
+            this.tabPage4.Size = new System.Drawing.Size(389, 354);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Удалить";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.deleteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deleteComboBox.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deleteComboBox.FormattingEnabled = true;
-            this.deleteComboBox.Location = new System.Drawing.Point(174, 18);
+            this.deleteComboBox.Location = new System.Drawing.Point(181, 18);
             this.deleteComboBox.Name = "deleteComboBox";
             this.deleteComboBox.Size = new System.Drawing.Size(197, 31);
             this.deleteComboBox.TabIndex = 31;
@@ -277,7 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(387, 450);
+            this.ClientSize = new System.Drawing.Size(397, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

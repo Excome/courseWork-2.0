@@ -33,7 +33,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_periodical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_periodical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.advertising_cm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.saleAddTB = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,6 +59,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numberAddTB = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.saleUpdateTB = new System.Windows.Forms.TextBox();
             this.updateCombobox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,19 +80,6 @@
             this.deleteComboBox1 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.saleAddTB = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.saleUpdateTB = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_periodical = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_periodical = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.advertising_cm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -166,6 +166,78 @@
             this.dataGridView1.Size = new System.Drawing.Size(754, 294);
             this.dataGridView1.TabIndex = 0;
             // 
+            // id
+            // 
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Width = 50;
+            // 
+            // name_periodical
+            // 
+            this.name_periodical.Frozen = true;
+            this.name_periodical.HeaderText = "Название";
+            this.name_periodical.Name = "name_periodical";
+            this.name_periodical.ReadOnly = true;
+            this.name_periodical.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.name_periodical.Width = 150;
+            // 
+            // id_periodical
+            // 
+            this.id_periodical.HeaderText = "ID Изд.";
+            this.id_periodical.Name = "id_periodical";
+            this.id_periodical.ReadOnly = true;
+            this.id_periodical.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_periodical.Width = 50;
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Номер";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.number.Width = 50;
+            // 
+            // count
+            // 
+            this.count.HeaderText = "Тираж";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            this.count.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.count.Width = 70;
+            // 
+            // unit_price
+            // 
+            this.unit_price.HeaderText = "Цена 1 экз.";
+            this.unit_price.Name = "unit_price";
+            this.unit_price.ReadOnly = true;
+            this.unit_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.unit_price.Width = 70;
+            // 
+            // unit_cost
+            // 
+            this.unit_cost.HeaderText = "Стоимость 1 экз.";
+            this.unit_cost.Name = "unit_cost";
+            this.unit_cost.ReadOnly = true;
+            this.unit_cost.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.unit_cost.Width = 70;
+            // 
+            // advertising_cm
+            // 
+            this.advertising_cm.HeaderText = "Реклама 1см^2";
+            this.advertising_cm.Name = "advertising_cm";
+            this.advertising_cm.ReadOnly = true;
+            this.advertising_cm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // total_sale
+            // 
+            this.total_sale.HeaderText = "Кол-во продаж";
+            this.total_sale.Name = "total_sale";
+            this.total_sale.ReadOnly = true;
+            this.total_sale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label16);
@@ -190,6 +262,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(131, 223);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(168, 23);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Кол-во продаж:";
+            // 
+            // saleAddTB
+            // 
+            this.saleAddTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saleAddTB.Location = new System.Drawing.Point(314, 216);
+            this.saleAddTB.Name = "saleAddTB";
+            this.saleAddTB.Size = new System.Drawing.Size(269, 30);
+            this.saleAddTB.TabIndex = 23;
+            this.saleAddTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saleAddTB_KeyPress);
             // 
             // label9
             // 
@@ -342,6 +433,25 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Изменить";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(133, 220);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(168, 23);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "Кол-во продаж:";
+            // 
+            // saleUpdateTB
+            // 
+            this.saleUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saleUpdateTB.Location = new System.Drawing.Point(316, 213);
+            this.saleUpdateTB.Name = "saleUpdateTB";
+            this.saleUpdateTB.Size = new System.Drawing.Size(269, 30);
+            this.saleUpdateTB.TabIndex = 37;
+            this.saleUpdateTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saleUpdateTB_KeyPress);
             // 
             // updateCombobox2
             // 
@@ -541,116 +651,6 @@
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(131, 223);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(168, 23);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Кол-во продаж:";
-            // 
-            // saleAddTB
-            // 
-            this.saleAddTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saleAddTB.Location = new System.Drawing.Point(314, 216);
-            this.saleAddTB.Name = "saleAddTB";
-            this.saleAddTB.Size = new System.Drawing.Size(269, 30);
-            this.saleAddTB.TabIndex = 23;
-            this.saleAddTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saleAddTB_KeyPress);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(133, 220);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(168, 23);
-            this.label17.TabIndex = 38;
-            this.label17.Text = "Кол-во продаж:";
-            // 
-            // saleUpdateTB
-            // 
-            this.saleUpdateTB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saleUpdateTB.Location = new System.Drawing.Point(316, 213);
-            this.saleUpdateTB.Name = "saleUpdateTB";
-            this.saleUpdateTB.Size = new System.Drawing.Size(269, 30);
-            this.saleUpdateTB.TabIndex = 37;
-            this.saleUpdateTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saleUpdateTB_KeyPress);
-            // 
-            // id
-            // 
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 50;
-            // 
-            // name_periodical
-            // 
-            this.name_periodical.Frozen = true;
-            this.name_periodical.HeaderText = "Название";
-            this.name_periodical.Name = "name_periodical";
-            this.name_periodical.ReadOnly = true;
-            this.name_periodical.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.name_periodical.Width = 150;
-            // 
-            // id_periodical
-            // 
-            this.id_periodical.HeaderText = "ID Изд.";
-            this.id_periodical.Name = "id_periodical";
-            this.id_periodical.ReadOnly = true;
-            this.id_periodical.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id_periodical.Width = 50;
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Номер";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.number.Width = 50;
-            // 
-            // count
-            // 
-            this.count.HeaderText = "Тираж";
-            this.count.Name = "count";
-            this.count.ReadOnly = true;
-            this.count.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.count.Width = 70;
-            // 
-            // unit_price
-            // 
-            this.unit_price.HeaderText = "Цена 1 экз.";
-            this.unit_price.Name = "unit_price";
-            this.unit_price.ReadOnly = true;
-            this.unit_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.unit_price.Width = 70;
-            // 
-            // unit_cost
-            // 
-            this.unit_cost.HeaderText = "Стоимость 1 экз.";
-            this.unit_cost.Name = "unit_cost";
-            this.unit_cost.ReadOnly = true;
-            this.unit_cost.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.unit_cost.Width = 70;
-            // 
-            // advertising_cm
-            // 
-            this.advertising_cm.HeaderText = "Реклама 1см^2";
-            this.advertising_cm.Name = "advertising_cm";
-            this.advertising_cm.ReadOnly = true;
-            this.advertising_cm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // total_sale
-            // 
-            this.total_sale.HeaderText = "Кол-во продаж";
-            this.total_sale.Name = "total_sale";
-            this.total_sale.ReadOnly = true;
-            this.total_sale.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // PeriodicalNumbersForm
             // 

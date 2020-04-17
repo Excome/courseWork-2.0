@@ -33,7 +33,7 @@
             this.booksButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.advertisersButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.contractsButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.numbersButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -99,17 +99,18 @@
             this.advertisersButton.UseVisualStyleBackColor = false;
             this.advertisersButton.Click += new System.EventHandler(this.advertisersButton_Click);
             // 
-            // button5
+            // contractsButton
             // 
-            this.button5.BackColor = System.Drawing.Color.LightBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(433, 333);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(197, 44);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Контракты";
-            this.button5.UseVisualStyleBackColor = false;
+            this.contractsButton.BackColor = System.Drawing.Color.LightBlue;
+            this.contractsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.contractsButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contractsButton.Location = new System.Drawing.Point(433, 333);
+            this.contractsButton.Name = "contractsButton";
+            this.contractsButton.Size = new System.Drawing.Size(197, 44);
+            this.contractsButton.TabIndex = 5;
+            this.contractsButton.Text = "Контракты";
+            this.contractsButton.UseVisualStyleBackColor = false;
+            this.contractsButton.Click += new System.EventHandler(this.contractsButton_Click);
             // 
             // button6
             // 
@@ -144,7 +145,7 @@
             this.ClientSize = new System.Drawing.Size(659, 393);
             this.Controls.Add(this.numbersButton);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.contractsButton);
             this.Controls.Add(this.advertisersButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.booksButton);
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Button booksButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button advertisersButton;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button contractsButton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button numbersButton;
     }
