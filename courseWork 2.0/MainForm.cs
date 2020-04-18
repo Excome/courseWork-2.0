@@ -82,5 +82,17 @@ namespace courseWork_2._0
             ContractsForm ContractsForm = new ContractsForm(this);
             ContractsForm.ShowDialog();
         }
+
+        private void bookletsButton_Click(object sender, EventArgs e)
+        {
+            BookletsForm BookletsForm = new BookletsForm(this);
+            BookletsForm.ShowDialog();
+        }
+
+        private void reportsButton_Click(object sender, EventArgs e)
+        {
+            ReportsForm ReportsForm = new ReportsForm(this);
+            ReportsForm.ShowDialog();
+        }
     }
 }

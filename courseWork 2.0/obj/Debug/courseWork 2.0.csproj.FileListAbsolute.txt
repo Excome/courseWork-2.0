@@ -25,3 +25,5 @@ C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWo
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertisersForm.resources
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertisersForm.resources
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ContractsForm.resources
+C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.BookletsForm.resources
+C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ReportsForm.resources

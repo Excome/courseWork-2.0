@@ -78,7 +78,7 @@ namespace courseWork_2._0
             List<string[]> data = new List<string[]>();
             while (dataReader.Read())
             {
-                data.Add(new string[9]);
+                data.Add(new string[10]);
                 data[data.Count - 1][0] = dataReader[0].ToString();
                 data[data.Count - 1][1] = dataReader[1].ToString();
                 data[data.Count - 1][2] = dataReader[2].ToString();
@@ -88,6 +88,7 @@ namespace courseWork_2._0
                 data[data.Count - 1][6] = dataReader[6].ToString();
                 data[data.Count - 1][7] = dataReader[7].ToString();
                 data[data.Count - 1][8] = dataReader[8].ToString();
+                data[data.Count - 1][9] = dataReader[9].ToString();
             }
             dataReader.Close();
             if (sqlConnection.State == ConnectionState.Open)
@@ -117,10 +118,11 @@ namespace courseWork_2._0
             {
                 dataGridView1.Rows.Clear();
                 LoadDataComboBox(addCombobox);
+                advertisingAddComboBox.SelectedIndex = 0;
             }
             if (tabControl1.SelectedIndex == 2)
             {
-                LoadDataComboBox(updateCombobox1);
+                LoadDataComboBox(updateCombobox1);                
             }
             if (tabControl1.SelectedIndex == 3)
             {
@@ -164,6 +166,20 @@ namespace courseWork_2._0
             if (!Char.IsDigit(ch) && ch != 8)
                 e.Handled = true;
         }
+        private void advertisingAddComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (advertisingAddComboBox.SelectedIndex == 0)
+            {
+                advertAddTB.ReadOnly = false;
+                advertisingAddComboBox.SelectedValue = "Да";
+            }
+            else if (advertisingAddComboBox.SelectedIndex == 1)
+            {
+                advertisingAddComboBox.SelectedValue = "Нет";
+                advertAddTB.Text = "0";
+                advertAddTB.ReadOnly = true;
+            }
+        }
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -180,14 +196,15 @@ namespace courseWork_2._0
                     !string.IsNullOrEmpty(advertAddTB.Text) && !string.IsNullOrWhiteSpace(advertAddTB.Text))
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO [Periodical_Numbers] (name_periodical, id_periodical, number, count, unit_price," +
-                        "unit_cost, advertising_cm, total_sale)VALUES(@name_periodical, @id_periodical, @number, @count, @unit_price, @unit_cost," +
-                        " @advertising_cm, @total_sale)", sqlConnection);
+                        "unit_cost, advertising, advertising_cm, total_sale)VALUES(@name_periodical, @id_periodical, @number, @count, @unit_price, @unit_cost," +
+                        " @advertising, @advertising_cm, @total_sale)", sqlConnection);
                     command.Parameters.AddWithValue("name_periodical", addCombobox.Text);
                     command.Parameters.AddWithValue("id_periodical", addCombobox.SelectedValue);
                     command.Parameters.AddWithValue("number", Convert.ToInt32(numberAddTB.Text));
                     command.Parameters.AddWithValue("count", Convert.ToInt32(countAddTB.Text));
                     command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceAddTB.Text));
                     command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costAddTB.Text));
+                    command.Parameters.AddWithValue("advertising", advertisingAddComboBox.SelectedItem);
                     command.Parameters.AddWithValue("advertising_cm", Convert.ToInt32(advertAddTB.Text));
                     command.Parameters.AddWithValue("total_sale", Convert.ToInt32(saleAddTB.Text));
                     command.ExecuteNonQuery();
@@ -228,6 +245,7 @@ namespace courseWork_2._0
                 countUpdateTB.Text = Convert.ToString(sqlReader["count"]);
                 priceUpdateTB.Text = Convert.ToString(sqlReader["unit_price"]);
                 costUpdateTB.Text = Convert.ToString(sqlReader["unit_cost"]);
+                advertisingUpdateComboBox.SelectedItem = sqlReader["advertising"];
                 advertUpdateTB.Text = Convert.ToString(sqlReader["advertising_cm"]);
                 saleUpdateTB.Text = Convert.ToString(sqlReader["total_sale"]);
                 sqlReader.Close();
@@ -242,6 +260,21 @@ namespace courseWork_2._0
             }
         }
 
+        private void advertisingUpdateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (advertisingUpdateComboBox.SelectedIndex == 0)
+            {
+                advertUpdateTB.ReadOnly = false;
+                advertisingUpdateComboBox.SelectedValue = "Да";
+            }
+            else if (advertisingUpdateComboBox.SelectedIndex == 1)
+            {
+                advertisingUpdateComboBox.SelectedValue = "Нет";
+                advertUpdateTB.Text = "0";
+                advertUpdateTB.ReadOnly = true;
+            }
+        }
+
         private void updateButton_Click(object sender, EventArgs e)
         {
             try
@@ -251,11 +284,12 @@ namespace courseWork_2._0
                     sqlConnection.Open();
                 }
                 SqlCommand command = new SqlCommand("UPDATE [Periodical_Numbers] SET [count]=@count, [unit_price]=@unit_price," +
-                    "[unit_cost]=@unit_cost, [advertising_cm]=@advertising_cm, [total_sale]=@total_sale WHERE [id]=@id", sqlConnection);
+                    "[unit_cost]=@unit_cost, [advertising]=@advertising, [advertising_cm]=@advertising_cm, [total_sale]=@total_sale WHERE [id]=@id", sqlConnection);
                 command.Parameters.AddWithValue("id", updateCombobox2.SelectedValue);
                 command.Parameters.AddWithValue("count", countUpdateTB.Text);
                 command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceUpdateTB.Text));
                 command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costUpdateTB.Text));
+                command.Parameters.AddWithValue("advertising", advertisingUpdateComboBox.SelectedItem);
                 command.Parameters.AddWithValue("advertising_cm", Convert.ToInt32(advertUpdateTB.Text));
                 command.Parameters.AddWithValue("total_sale", Convert.ToInt32(saleUpdateTB.Text));
                 command.ExecuteNonQuery();

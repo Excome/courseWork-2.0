@@ -94,7 +94,8 @@ namespace courseWork_2._0
             {
                 sqlConnection.Open();
             }
-            SqlCommand command = new SqlCommand("SELECT * FROM Periodical_Numbers WHERE [id_periodical]=@id_periodical", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Periodical_Numbers WHERE [id_periodical]=@id_periodical AND " +
+                "[advertising]='Да'", sqlConnection);
             command.Parameters.AddWithValue("id_periodical", cb1.SelectedValue);
             SqlDataAdapter sqlAdapter = new SqlDataAdapter(command);
             DataSet comboboxDataSet = new DataSet();
