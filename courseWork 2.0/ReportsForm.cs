@@ -232,5 +232,20 @@ namespace courseWork_2._0
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(dataGridView1.Size.Width + 10, dataGridView1.Size.Height + 10);
+            dataGridView1.DrawToBitmap(bmp, dataGridView1.Bounds);
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+           if (dataGridView1.Rows != null)
+            {
+                printDocument1.Print();
+            }
+        }
     }
 }

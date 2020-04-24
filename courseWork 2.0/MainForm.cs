@@ -32,7 +32,7 @@ namespace courseWork_2._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=PROFF-PC\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True";
+            string connectionString = @"Data Source=LAPTOP-0GMNTE36\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True";
             sqlConnection = new SqlConnection(connectionString);
             try
             {
@@ -91,8 +91,8 @@ namespace courseWork_2._0
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            ReportsForm ReportsForm = new ReportsForm(this);
-            ReportsForm.ShowDialog();
+            SalesRatingForm SalesRatingForm = new SalesRatingForm(this);
+            SalesRatingForm.ShowDialog();
         }
     }
 }

@@ -30,3 +30,21 @@ C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseW
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.BookletsForm.resources
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ContractsForm.resources
 C:\Users\Proff\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ReportsForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.exe.config
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.exe
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\bin\Debug\courseWork 2.0.pdb
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csprojAssemblyReference.cache
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertisersForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.BookletsForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.BooksForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ContractsForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.MainForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalNumbersForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalsForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.Properties.Resources.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ReportsForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.GenerateResource.cache
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.CoreCompileInputs.cache
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.pdb
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.SalesRatingForm.resources
