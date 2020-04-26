@@ -52,6 +52,12 @@
     <Compile Include="AdvertisersForm.Designer.cs">
       <DependentUpon>AdvertisersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdvertReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvertReportForm.Designer.cs">
+      <DependentUpon>AdvertReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookletsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="AdvertisersForm.resx">
       <DependentUpon>AdvertisersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvertReportForm.resx">
+      <DependentUpon>AdvertReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookletsForm.resx">
       <DependentUpon>BookletsForm.cs</DependentUpon>

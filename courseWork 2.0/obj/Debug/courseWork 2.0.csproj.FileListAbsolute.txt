@@ -48,3 +48,6 @@ C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWo
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.pdb
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.SalesRatingForm.resources
+C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.SalesRatingForm.resources
+C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.CoreCompileInputs.cache
+C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertReportForm.resources

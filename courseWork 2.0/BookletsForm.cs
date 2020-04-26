@@ -37,7 +37,7 @@ namespace courseWork_2._0
             }
             SqlCommand command = new SqlCommand("USE typography " +
                 "SELECT Booklets.id, Booklets.name, Advertisers.name, " +
-                "Booklets.count, Booklets.unit_price, Booklets.unit_cost " +
+                "Booklets.count, Booklets.unit_price, Booklets.unit_cost, Booklets.total_price " +
                 "FROM Booklets " +
                 "JOIN Advertisers ON Advertisers.id = Booklets.id_advertiser " +
                 "ORDER BY id", sqlConnection);
@@ -45,13 +45,14 @@ namespace courseWork_2._0
             List<string[]> data = new List<string[]>();
             while (dataReader.Read())
             {
-                data.Add(new string[6]);
+                data.Add(new string[7]);
                 data[data.Count - 1][0] = dataReader[0].ToString();
                 data[data.Count - 1][1] = dataReader[1].ToString();
                 data[data.Count - 1][2] = dataReader[2].ToString();
                 data[data.Count - 1][3] = dataReader[3].ToString();
                 data[data.Count - 1][4] = dataReader[4].ToString();
-                data[data.Count - 1][5] = dataReader[5].ToString(); 
+                data[data.Count - 1][5] = dataReader[5].ToString();
+                data[data.Count - 1][6] = dataReader[6].ToString();
             }
             dataReader.Close();
             if (sqlConnection.State == ConnectionState.Open)
@@ -145,6 +146,56 @@ namespace courseWork_2._0
                 e.Handled = true;
         }
 
+        private void countAddTB_TextChanged(object sender, EventArgs e)
+        {
+            if (countAddTB.Text == "" || countAddTB.Text == null)
+            {
+                countAddTB.Text = "0";
+            }
+            totalPriceAddLabel.Text = Convert.ToString(Convert.ToInt32(countAddTB.Text) * Convert.ToInt32(priceAddTB.Text));
+        }
+
+        private void priceAddTB_TextChanged(object sender, EventArgs e)
+        {
+            if (priceAddTB.Text == "" || priceAddTB.Text == null)
+            {
+                priceAddTB.Text = "0";
+            }
+            totalPriceAddLabel.Text = Convert.ToString(Convert.ToInt32(countAddTB.Text) * Convert.ToInt32(priceAddTB.Text));
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                SqlCommand command = new SqlCommand("INSERT INTO [Booklets] (name, id_advertiser, count, unit_price, unit_cost, " +
+                    "total_price)VALUES(@name, @id_advertiser, @count, @unit_price, @unit_cost, @total_price)", sqlConnection);
+                command.Parameters.AddWithValue("name", nameAddTB.Text);
+                command.Parameters.AddWithValue("id_advertiser", Convert.ToInt32(advertisersAddCombobox.SelectedValue));
+                command.Parameters.AddWithValue("count", Convert.ToInt32(countAddTB.Text));
+                command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceAddTB.Text));
+                command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costAddTB.Text));
+                command.Parameters.AddWithValue("total_price", Convert.ToInt32(totalPriceAddLabel.Text));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись успешно добавлена!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
         private void bookletsUpdateComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
@@ -198,6 +249,24 @@ namespace courseWork_2._0
                 e.Handled = true;
         }
 
+        private void countUpdateTB_TextChanged(object sender, EventArgs e)
+        {
+            if (countUpdateTB.Text == "" || countUpdateTB.Text == null)
+            {
+                countUpdateTB.Text = "0";
+            }
+            totalPriceUpdateLabel.Text = Convert.ToString(Convert.ToInt32(countUpdateTB.Text) * Convert.ToInt32(priceUpdateTB.Text));
+        }
+
+        private void priceUpdateTB_TextChanged(object sender, EventArgs e)
+        {
+            if (priceUpdateTB.Text == "" || priceUpdateTB.Text == null)
+            {
+                priceUpdateTB.Text = "0";
+            }
+            totalPriceUpdateLabel.Text = Convert.ToString(Convert.ToInt32(countUpdateTB.Text) * Convert.ToInt32(priceUpdateTB.Text));
+        }
+
         private void updateButton_Click(object sender, EventArgs e)
         {
             try
@@ -207,13 +276,14 @@ namespace courseWork_2._0
                     sqlConnection.Open();
                 }
                 SqlCommand command = new SqlCommand("UPDATE [Booklets] SET [name]=@name, [id_advertiser]=@id_advertiser, " +
-                    "[count]=@count, [unit_price]=@unit_price, [unit_cost]=@unit_cost WHERE [id]=@id", sqlConnection);
+                    "[count]=@count, [unit_price]=@unit_price, [unit_cost]=@unit_cost, [total_price]=@total_price WHERE [id]=@id", sqlConnection);
                 command.Parameters.AddWithValue("id", bookletsUpdateComboBox.SelectedValue);
                 command.Parameters.AddWithValue("name", nameUpdateTB.Text);
                 command.Parameters.AddWithValue("id_advertiser", Convert.ToInt32(advertisersUpdateComboBox.SelectedValue));
                 command.Parameters.AddWithValue("count", Convert.ToInt32(countUpdateTB.Text));
                 command.Parameters.AddWithValue("unit_price", Convert.ToInt32(priceUpdateTB.Text));
                 command.Parameters.AddWithValue("unit_cost", Convert.ToInt32(costUpdateTB.Text));
+                command.Parameters.AddWithValue("total_price", Convert.ToInt32(totalPriceUpdateLabel.Text));
                 command.ExecuteNonQuery();
                 MessageBox.Show("Изменения успешно внесены!");
             }
@@ -256,5 +326,7 @@ namespace courseWork_2._0
                 }
             }
         }
+
+        
     }
 }
