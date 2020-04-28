@@ -63,15 +63,16 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 45;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(830, 384);
             this.dataGridView1.TabIndex = 28;
             // 
             // typeComboBox
@@ -209,7 +210,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(603, 456);
+            this.tabControl1.Size = new System.Drawing.Size(844, 456);
             this.tabControl1.TabIndex = 43;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -229,7 +230,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(595, 430);
+            this.tabPage1.Size = new System.Drawing.Size(836, 430);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Парметры";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -241,7 +242,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(595, 430);
+            this.tabPage2.Size = new System.Drawing.Size(836, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Отчет";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -251,7 +252,7 @@
             this.printButton.BackColor = System.Drawing.Color.LightBlue;
             this.printButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.printButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.printButton.Location = new System.Drawing.Point(519, 391);
+            this.printButton.Location = new System.Drawing.Point(724, 396);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(74, 31);
             this.printButton.TabIndex = 43;
@@ -276,9 +277,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(603, 456);
+            this.ClientSize = new System.Drawing.Size(844, 456);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SalesRatingForm";
             this.Text = "Отчет рейтинга продаж типографии";
             this.Load += new System.EventHandler(this.SalesRating_Load);

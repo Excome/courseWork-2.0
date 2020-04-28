@@ -104,7 +104,14 @@ namespace courseWork_2._0
                     command.Parameters.AddWithValue("id_advertiser", advertisersComboBox.SelectedValue);
                     hScrollBar1.Maximum = Convert.ToInt32(command.ExecuteScalar());
                 }
-                hScrollBar1.Minimum = 1;
+                if (hScrollBar1.Maximum == 0)
+                {
+                    hScrollBar1.Maximum = 0;
+                }
+                else
+                {
+                    hScrollBar1.Minimum = 1;
+                }
                 hScrollBar1.Value = hScrollBar1.Maximum;
                 rowsTB1.Text = Convert.ToString(hScrollBar1.Maximum);
             }
@@ -132,7 +139,7 @@ namespace courseWork_2._0
                     summAll += Convert.ToInt32(rowsTB1.Text);
                 }
                 hScrollBar1.Maximum = summAll;
-                hScrollBar1.Minimum = 0;
+                hScrollBar1.Minimum = 1;
                 hScrollBar1.Value = hScrollBar1.Maximum;
                 rowsTB1.Text = Convert.ToString(hScrollBar1.Maximum);
                 advertisersComboBox.Enabled = false;
@@ -167,8 +174,12 @@ namespace courseWork_2._0
             }
             if (tabControl1.SelectedIndex == 1)
             {
-                this.Width = 893;
+                this.Width = 830;
                 this.Height = 495;
+                if (dataGridView1.Rows == null || dataGridView1.Rows.Count == 0)
+                {
+                    tabControl1.SelectedIndex = 0;
+                }
             }
         }
 
@@ -215,9 +226,8 @@ namespace courseWork_2._0
         private void reportButton1_Click(object sender, EventArgs e)
         {
             string query = queryCreator();
-            if (query != "")
+            if (query != "" && rowsTB1.Text != "0")
             {
-                dataGridView1.Columns[0].Width = 
                 SqlCommand command = new SqlCommand(query, sqlConnection);
                 command.Parameters.AddWithValue("rows", Convert.ToInt32(rowsTB1.Text));
                 if (query.IndexOf("WHERE") != -1)
@@ -238,14 +248,11 @@ namespace courseWork_2._0
         {
             try
             {
-                int width = dataGridView1.Width;
                 int height = dataGridView1.Height;
-                dataGridView1.Width = 877;
                 dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 2;
                 dataGridView1.ClearSelection();
                 bmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
                 dataGridView1.DrawToBitmap(bmp, new Rectangle(0, 0, dataGridView1.Width, dataGridView1.Height));
-                dataGridView1.Width = width;
                 dataGridView1.Height = height;
                 printPreviewDialog1.ShowDialog();
             }

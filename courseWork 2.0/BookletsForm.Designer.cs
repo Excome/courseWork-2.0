@@ -32,7 +32,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.advertiser_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.totalPriceAddLabel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.costAddTB = new System.Windows.Forms.TextBox();
@@ -45,6 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nameAddTB = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.totalPriceUpdateLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.bookletsUpdateComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,17 +73,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.bookletsDeleteComboBox = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.advertiser_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceAddLabel = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.totalPriceUpdateLabel = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -115,7 +115,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(749, 294);
+            this.tabPage1.Size = new System.Drawing.Size(749, 335);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список буклетов";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,13 +137,64 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(743, 285);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Width = 50;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Название буклета";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 180;
+            // 
+            // advertiser_name
+            // 
+            this.advertiser_name.HeaderText = "Рекламодатель";
+            this.advertiser_name.Name = "advertiser_name";
+            this.advertiser_name.ReadOnly = true;
+            this.advertiser_name.Width = 160;
+            // 
+            // count
+            // 
+            this.count.HeaderText = "Тираж";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            this.count.Width = 80;
+            // 
+            // unit_price
+            // 
+            this.unit_price.HeaderText = "Цена 1шт.";
+            this.unit_price.Name = "unit_price";
+            this.unit_price.ReadOnly = true;
+            this.unit_price.Width = 80;
+            // 
+            // unit_cost
+            // 
+            this.unit_cost.HeaderText = "Стоимость 1шт.";
+            this.unit_cost.Name = "unit_cost";
+            this.unit_cost.ReadOnly = true;
+            this.unit_cost.Width = 80;
+            // 
+            // total_price
+            // 
+            this.total_price.HeaderText = "Итоговая цена";
+            this.total_price.Name = "total_price";
+            this.total_price.ReadOnly = true;
+            this.total_price.Width = 70;
             // 
             // tabPage2
             // 
@@ -167,6 +218,28 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // totalPriceAddLabel
+            // 
+            this.totalPriceAddLabel.AutoSize = true;
+            this.totalPriceAddLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.totalPriceAddLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalPriceAddLabel.Location = new System.Drawing.Point(351, 187);
+            this.totalPriceAddLabel.Name = "totalPriceAddLabel";
+            this.totalPriceAddLabel.Padding = new System.Windows.Forms.Padding(3);
+            this.totalPriceAddLabel.Size = new System.Drawing.Size(30, 31);
+            this.totalPriceAddLabel.TabIndex = 38;
+            this.totalPriceAddLabel.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(111, 195);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(227, 23);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Итоговая цена (руб.):";
             // 
             // label8
             // 
@@ -304,6 +377,28 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Изменить";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // totalPriceUpdateLabel
+            // 
+            this.totalPriceUpdateLabel.AutoSize = true;
+            this.totalPriceUpdateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.totalPriceUpdateLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalPriceUpdateLabel.Location = new System.Drawing.Point(346, 218);
+            this.totalPriceUpdateLabel.Name = "totalPriceUpdateLabel";
+            this.totalPriceUpdateLabel.Padding = new System.Windows.Forms.Padding(3);
+            this.totalPriceUpdateLabel.Size = new System.Drawing.Size(30, 31);
+            this.totalPriceUpdateLabel.TabIndex = 51;
+            this.totalPriceUpdateLabel.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(113, 226);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(227, 23);
+            this.label15.TabIndex = 50;
+            this.label15.Text = "Итоговая цена (руб.):";
             // 
             // label12
             // 
@@ -483,101 +578,6 @@
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // id
-            // 
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 50;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Название буклета";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 180;
-            // 
-            // advertiser_name
-            // 
-            this.advertiser_name.HeaderText = "Рекламодатель";
-            this.advertiser_name.Name = "advertiser_name";
-            this.advertiser_name.ReadOnly = true;
-            this.advertiser_name.Width = 160;
-            // 
-            // count
-            // 
-            this.count.HeaderText = "Тираж";
-            this.count.Name = "count";
-            this.count.ReadOnly = true;
-            this.count.Width = 80;
-            // 
-            // unit_price
-            // 
-            this.unit_price.HeaderText = "Цена 1шт.";
-            this.unit_price.Name = "unit_price";
-            this.unit_price.ReadOnly = true;
-            this.unit_price.Width = 80;
-            // 
-            // unit_cost
-            // 
-            this.unit_cost.HeaderText = "Стоимость 1шт.";
-            this.unit_cost.Name = "unit_cost";
-            this.unit_cost.ReadOnly = true;
-            this.unit_cost.Width = 80;
-            // 
-            // total_price
-            // 
-            this.total_price.HeaderText = "Итоговая цена";
-            this.total_price.Name = "total_price";
-            this.total_price.ReadOnly = true;
-            this.total_price.Width = 70;
-            // 
-            // totalPriceAddLabel
-            // 
-            this.totalPriceAddLabel.AutoSize = true;
-            this.totalPriceAddLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.totalPriceAddLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.totalPriceAddLabel.Location = new System.Drawing.Point(351, 187);
-            this.totalPriceAddLabel.Name = "totalPriceAddLabel";
-            this.totalPriceAddLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.totalPriceAddLabel.Size = new System.Drawing.Size(30, 31);
-            this.totalPriceAddLabel.TabIndex = 38;
-            this.totalPriceAddLabel.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(111, 195);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(227, 23);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Итоговая цена (руб.):";
-            // 
-            // totalPriceUpdateLabel
-            // 
-            this.totalPriceUpdateLabel.AutoSize = true;
-            this.totalPriceUpdateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.totalPriceUpdateLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.totalPriceUpdateLabel.Location = new System.Drawing.Point(346, 218);
-            this.totalPriceUpdateLabel.Name = "totalPriceUpdateLabel";
-            this.totalPriceUpdateLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.totalPriceUpdateLabel.Size = new System.Drawing.Size(30, 31);
-            this.totalPriceUpdateLabel.TabIndex = 51;
-            this.totalPriceUpdateLabel.Text = "0";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(113, 226);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(227, 23);
-            this.label15.TabIndex = 50;
-            this.label15.Text = "Итоговая цена (руб.):";
             // 
             // BookletsForm
             // 

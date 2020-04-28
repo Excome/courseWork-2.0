@@ -42,7 +42,6 @@ C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWo
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalNumbersForm.resources
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.PeriodicalsForm.resources
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.Properties.Resources.resources
-C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.ReportsForm.resources
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.GenerateResource.cache
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.CoreCompileInputs.cache
 C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.exe
@@ -51,3 +50,4 @@ C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWo
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.SalesRatingForm.resources
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork 2.0.csproj.CoreCompileInputs.cache
 C:\Users\Excome\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertReportForm.resources
+C:\Users\02max\Documents\GitHub\courseWork-2.0\courseWork 2.0\obj\Debug\courseWork_2._0.AdvertReportForm.resources

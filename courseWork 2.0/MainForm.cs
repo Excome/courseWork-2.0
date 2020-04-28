@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace courseWork_2._0
 {
@@ -32,7 +33,8 @@ namespace courseWork_2._0
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-ATRUUNO\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True";
+            StreamReader sr = File.OpenText("connection.txt");
+            string connectionString = sr.ReadLine();
             sqlConnection = new SqlConnection(connectionString);
             try
             {

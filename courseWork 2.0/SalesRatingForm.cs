@@ -272,8 +272,12 @@ namespace courseWork_2._0
             }
             if (tabControl1.SelectedIndex == 1)
             {
-                this.Width = 619;
+                this.Width = 860;
                 this.Height = 495;
+                if (dataGridView1.Rows == null || dataGridView1.Rows.Count == 0)
+                {
+                    tabControl1.SelectedIndex = 0;
+                }
             }
         }
 
@@ -283,7 +287,7 @@ namespace courseWork_2._0
         {
             int width = dataGridView1.Width;
             int height = dataGridView1.Height;
-            dataGridView1.Width = 877;
+            dataGridView1.Width = 830;
             dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 2;
             dataGridView1.ClearSelection();
             bmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);

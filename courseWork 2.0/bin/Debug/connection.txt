@@ -1,0 +1,1 @@
+Data Source=LAPTOP-0GMNTE36\SQLEXPRESS;Initial Catalog=typography;Integrated Security=True

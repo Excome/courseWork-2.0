@@ -140,6 +140,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(745, 348);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -561,6 +562,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "BooksForm";
             this.Text = "Список книг";
             this.Load += new System.EventHandler(this.BooksForm_Load);
