@@ -37,6 +37,7 @@
             this.reportsButton = new System.Windows.Forms.Button();
             this.numbersButton = new System.Windows.Forms.Button();
             this.advertReportButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -153,12 +154,23 @@
             this.advertReportButton.UseVisualStyleBackColor = false;
             this.advertReportButton.Click += new System.EventHandler(this.advertReportButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(194, 256);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(241, 16);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "(c) by Max Peshekhonov, IS-27, NNGASU";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(447, 262);
+            this.ClientSize = new System.Drawing.Size(447, 281);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.advertReportButton);
             this.Controls.Add(this.numbersButton);
             this.Controls.Add(this.reportsButton);
@@ -189,6 +201,7 @@
         private System.Windows.Forms.Button reportsButton;
         private System.Windows.Forms.Button numbersButton;
         private System.Windows.Forms.Button advertReportButton;
+        private System.Windows.Forms.Label label2;
     }
 }
 

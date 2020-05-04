@@ -42,6 +42,65 @@ namespace courseWork_2._0
                 sqlAdapter.Fill(DataSet);
                 DataTable DataTable = DataSet.Tables[0];
                 dataGridView1.DataSource = DataTable;
+                for (int i = 0; i < 5; i++)
+                {
+                    DataRow row = DataTable.NewRow();
+                    switch(i)
+                    {
+                        case 0:
+                            row[0] = "Итого:";
+                            break;
+                        case 1:
+                            row[0] = "Сумма продаж:";
+                            int summ = 0;
+                            foreach (DataRow item in DataTable.Rows)
+                            {
+                                if (! DBNull.Value.Equals(item["Кол-во продаж"]))
+                                    summ += Convert.ToInt32(item["Кол-во продаж"]);
+
+                            }
+                            row[1] = summ;
+                            break;
+                        case 2:
+                            row[0] = "Средн. продаж:";
+                            int avg = 0;
+                            int k = 0;
+                            foreach (DataRow item in DataTable.Rows)
+                            {
+                                if (!DBNull.Value.Equals(item["Кол-во продаж"])) {
+                                    avg += Convert.ToInt32(item["Кол-во продаж"]);
+                                    k ++;
+                                }                                    
+                            }
+                            row[1] = avg / k;
+                            break;
+                        case 3:
+                            row[0] = "Макс. продаж:";
+                            int max = 0;
+                            foreach (DataRow item in DataTable.Rows)
+                            {
+                                if (!DBNull.Value.Equals(item["Кол-во продаж"]))
+                                    if(max < Convert.ToInt32(item["Кол-во продаж"]))
+                                        max = Convert.ToInt32(item["Кол-во продаж"]);
+                            }
+                            row[1] = max;
+                            break;
+                        case 4:
+                            row[0] = "Мин. продаж:";
+                            int min = Convert.ToInt32(DataTable.Rows[0]["Кол-во продаж"]);
+                            foreach (DataRow item in DataTable.Rows)
+                            {
+                                if (!DBNull.Value.Equals(item["Кол-во продаж"]))
+                                    if (min > Convert.ToInt32(item["Кол-во продаж"]))
+                                        min = Convert.ToInt32(item["Кол-во продаж"]);
+                            }
+                            row[1] = min;
+                            break;
+
+                    }
+                    DataTable.Rows.Add(row);
+
+                }
             }
             catch (Exception ex)
             {
